@@ -8,14 +8,12 @@
 # которых делится нацело на 7.
 # * Решить задачу под пунктом b, н
 
-in_a_cube = []
-[in_a_cube.append(el**3) for el in range(1, 1001, 2)]
+in_a_cube = [el**3 for el in range(1, 1001, 2)]
 
 def devided_list(your_list, divider):
-    """функция принимает на вход список чисел your_list и возвращает список чисел которые делятся без остатка
-    на divider"""
-    new_list = []
-    [new_list.append(el) for el in your_list if sum(map(int, list(str(el)))) % divider == 0]
+    """функция принимает на вход список чисел your_list и возвращает список чисел сумма цифр которых делятся без
+    остатка на divider"""
+    new_list = [el for el in your_list if sum(map(int, list(str(el)))) % divider == 0]
     return new_list
 
 divided_seven = devided_list(in_a_cube, 7)
