@@ -21,5 +21,9 @@ divided_seven = devided_list(in_a_cube, 7)
 for i in range(len(divided_seven)):
     divided_seven[i] += 17
 
+for i in range(len(in_a_cube)):
+    in_a_cube[i] += 17
+
 print(sum(divided_seven))
 print(sum(devided_list(divided_seven, 7)))
+print(sum(devided_list(in_a_cube, 7)))
