@@ -19,8 +19,7 @@
 from time import strftime, gmtime
 
 duration = input('Введите продолжительности времени через запятую: ')
-duration_list = []
-[duration_list.append(el.strip()) for el in duration.split(',')]
+duration_list = [el.strip() for el in duration.split(',')]
 format_time_dict = {}
 
 for el in duration_list:

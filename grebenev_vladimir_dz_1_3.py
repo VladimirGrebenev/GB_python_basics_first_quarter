@@ -16,7 +16,9 @@
 def decline_percents(per):
     """функция принимает число per и возвращает правильное склонение слова 'процент'"""
     words = ['процент', 'процента', 'процентов']
-    if per % 10 == 1:
+    if per == 11 or per == 12 or per == 13 or per == 14:
+        return words[2]
+    elif per % 10 == 1:
         return words[0]
     elif per % 10 == 2 or per % 10 == 3 or per % 10 == 4:
         return words[1]
