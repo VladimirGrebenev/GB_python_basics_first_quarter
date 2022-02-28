@@ -19,16 +19,16 @@ def price_list(price):
     """Принимает на вход список цен, выдаёт строку в формате ** руб ** коп"""
     for el in price:
         n_list = str(el).split('.')
-        # if len(n_list) < 2:
-        #     print(f'{n_list[0]} руб 00 коп, ', end='')
-        # elif n_list[1].startswith('0') and len(n_list[1]) < 2:
-        #     print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
-        # elif n_list[1].startswith('0'):
-        #     print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
-        # elif int(n_list[1]) <= 9:
-        #     print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
-        # else:
-        #     print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
+        if len(n_list) < 2:
+            print(f'{n_list[0]} руб 00 коп, ', end='')
+        elif n_list[1].startswith('0') and len(n_list[1]) < 2:
+            print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
+        elif n_list[1].startswith('0'):
+            print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
+        elif int(n_list[1]) <= 9:
+            print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
+        else:
+            print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
 
 price_list(my_price)
 my_price.sort()
