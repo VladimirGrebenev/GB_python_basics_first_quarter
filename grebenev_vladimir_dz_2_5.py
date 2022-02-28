@@ -12,21 +12,23 @@
 # Создать новый список, содержащий те же цены, но отсортированные по убыванию.
 # Вывести цены пяти самых дорогих товаров. Сможете ли вывести цены этих товаров
 # по возрастанию, написав минимум кода?
-my_price = [63.7, 28.63, 64.03, 47.5, 54.04, 40.37, 75, 20.13, 27.26]
+my_price = [31.0, 63.7, 28.63, 64.03, 47.5, 54.04, 40.37, 75, 20.13, 27.26]
 print(my_price, id(my_price))
 
 def price_list(price):
     """Принимает на вход список цен, выдаёт строку в формате ** руб ** коп"""
     for el in price:
         n_list = str(el).split('.')
-        if len(n_list) < 2:
-            print(f'{n_list[0]} руб 00 коп, ', end='')
-        elif n_list[1].startswith('0'):
-            print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
-        elif int(n_list[1]) <= 9:
-            print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
-        else:
-            print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
+        # if len(n_list) < 2:
+        #     print(f'{n_list[0]} руб 00 коп, ', end='')
+        # elif n_list[1].startswith('0') and len(n_list[1]) < 2:
+        #     print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
+        # elif n_list[1].startswith('0'):
+        #     print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
+        # elif int(n_list[1]) <= 9:
+        #     print(f'{n_list[0]} руб {n_list[1]}0 коп, ', end='')
+        # else:
+        #     print(f'{n_list[0]} руб {n_list[1]} коп, ', end='')
 
 price_list(my_price)
 my_price.sort()
