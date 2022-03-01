@@ -20,15 +20,21 @@ my_list = ['в', '5', 'часов', '17', 'минут', 'температура'
            '+5', 'градусов']
 print(my_list, id(my_list))
 
+# for i in range(len(my_list)):
+#     try:
+#         int(my_list[i])
+#         if my_list[i].startswith('+'):
+#             my_list[i] = f'"{my_list[i].zfill(3)}"'
+#         elif my_list[i].isdecimal():
+#             my_list[i] = f'"{my_list[i].zfill(2)}"'
+#     except:
+#         pass
+
 for i in range(len(my_list)):
-    try:
-        int(my_list[i])
-        if my_list[i].startswith('+'):
-            my_list[i] = f'"{my_list[i].zfill(3)}"'
-        elif my_list[i].isdecimal():
-            my_list[i] = f'"{my_list[i].zfill(2)}"'
-    except:
-        pass
+    if my_list[i].isdigit():
+        my_list[i] = f'"{int(my_list[i]):02d}"'
+    elif my_list[i][1:].isdecimal():
+        my_list[i] = f'"{my_list[i][0]}{int(my_list[i][1:]):02d}"'
 
 print(my_list, id(my_list))
 print(' '.join(my_list), id(my_list))
