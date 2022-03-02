@@ -33,11 +33,11 @@ def thesaurus_adv(*args):
 
     sub_dict = {}
     for value in name_dict.values():
-        # for el in value:
-        #     key_1 = el.split(' ')[0][0]
-        #     sub_dict[key_1] = (
-        #         list(filter(lambda n: n.split(' ')[0][0].startswith(key_1), value)))
-        #     print(sub_dict)
+        for el in value:
+            key_1 = el.split(' ')[0][0]
+            sub_dict[key_1] = (
+                list(filter(lambda n: n.split(' ')[0][0].startswith(key_1), value)))
+            print(sub_dict)
 
     return name_dict
 
