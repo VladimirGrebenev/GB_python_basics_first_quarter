@@ -26,20 +26,20 @@ def thesaurus_adv(*args):
     """функция принимает имена сотрудников, возвращает словарь типа 'И':[
     'Илья', 'Иван']"""
     name_dict = {}
-    sub_dict ={}
-
     for el in args:
         key_1 = el.split(' ')[1][0]
-        key_2 = el.split(' ')[0][0]
         name_dict[key_1] = (
             list(filter(lambda n: n.split(' ')[1][0].startswith(key_1), args)))
-        sub_dict[key_2] = (list(filter(lambda n: n.split(' ')[0][0].startswith(
-            key_2), args)))
 
+    sub_dict = {}
+    for value in name_dict.values():
+        # for el in value:
+        #     key_1 = el.split(' ')[0][0]
+        #     sub_dict[key_1] = (
+        #         list(filter(lambda n: n.split(' ')[0][0].startswith(key_1), value)))
+        #     print(sub_dict)
 
-    name_dict_adv = {}
-
-    return name_dict, sub_dict, name_dict_adv
+    return name_dict
 
 pprint(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев",
                      "Илья Иванов", "Анна Савельева"))
