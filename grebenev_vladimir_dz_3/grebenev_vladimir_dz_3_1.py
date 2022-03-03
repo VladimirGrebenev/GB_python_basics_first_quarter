@@ -33,13 +33,14 @@ def num_translate(en_word):
     }
 
     if en_word.istitle():
-        en_word = en_word.lower()
-        print(str(trans_dict.get(en_word)).title())
+        ru_word = trans_dict.get(en_word.lower()).title()
+        return ru_word
     else:
-        print(trans_dict.get(en_word))
+        ru_word = trans_dict.get(en_word)
+        return ru_word
 
-num_translate('One')
-num_translate('eight')
-num_translate('twelve')
+print(num_translate('One'))
+print(num_translate('eight'))
+print(num_translate('twelve'))
 
 

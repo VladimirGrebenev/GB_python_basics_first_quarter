@@ -27,7 +27,8 @@ def get_jokes(number = 1, switch = True):
         for i in range(number):
             print(f'{choice(nouns)} {choice(adverbs)} {choice(adjectives)}')
     else:
-        if number > len(nouns):
+        min_n = min(nouns, adverbs, adjectives)
+        if number > len(min_n):
             print(f'я не могу создать больше {len(nouns)} шуток с '
                   f'неповторяемыми словами')
         else:
@@ -41,6 +42,6 @@ def get_jokes(number = 1, switch = True):
                 print(f'{first_word} {second_word} {third_word}')
 
 get_jokes(number=5, switch=False)
-# get_jokes(number=3, switch=True)
-# get_jokes(number=10, switch=True)
-# get_jokes(number=10, switch=False)
+get_jokes(number=3, switch=True)
+get_jokes(number=10, switch=True)
+get_jokes(number=10, switch=False)
