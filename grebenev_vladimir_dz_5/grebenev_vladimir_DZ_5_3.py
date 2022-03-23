@@ -19,10 +19,10 @@
 
 tutors = [
     'Иван', 'Анастасия', 'Петр', 'Сергей',
-    'Дмитрий', 'Борис', 'Елена'
+    'Дмитрий', 'Борис', 'Елена',
 ]
 klasses = [
-    '9А', '7В', '9Б', '9В', '8Б', '10А',
+    '9А', '7В', '9Б', '9В', '8Б', '10А'
 ]
 
 def bagsha_list(list_1, list_2):
@@ -39,4 +39,5 @@ print(type(my_gen))
 print(my_gen)
 print(next(my_gen), next(my_gen), next(my_gen))
 print(next(my_gen), next(my_gen), next(my_gen))
+print(next(my_gen))
 print(next(my_gen))
