@@ -17,12 +17,5 @@ def odd_nums(max_num):
         yield num
 
 odd_to_15 = odd_nums(15)
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
-print(next(odd_to_15))
+print(*odd_to_15)
 

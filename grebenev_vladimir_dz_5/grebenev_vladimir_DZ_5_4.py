@@ -11,9 +11,8 @@ import sys
 
 src = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 
-result_1 = [src[i] for i in range(0,len(src)) if src[i] > src[i-1]]
+result_1 = [src[i] for i in range(1, len(src)) if src[i] > src[i-1]]
 print(type(result_1), sys.getsizeof(result_1), result_1)
 
-result = (src[i] for i in range(0,len(src)) if src[i] > src[i-1])
-print(type(result), sys.getsizeof(result),[next(result), next(result), next(result),
-                                            next(result), next(result), next(result), next(result)])
+result = (src[i] for i in range(1, len(src)) if src[i] > src[i-1])
+print(type(result), sys.getsizeof(result),[*result])

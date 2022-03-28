@@ -36,8 +36,4 @@ def bagsha_list(list_1, list_2):
 
 my_gen = bagsha_list(tutors, klasses)
 print(type(my_gen))
-print(my_gen)
-print(next(my_gen), next(my_gen), next(my_gen))
-print(next(my_gen), next(my_gen), next(my_gen))
-print(next(my_gen))
-print(next(my_gen))
+print(*my_gen)
