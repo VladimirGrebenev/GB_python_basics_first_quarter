@@ -20,7 +20,7 @@ check_spam = []
 for x in pars_list:
     check_spam.append(x[0])
 
-spamer = max(check_spam, key=check_spam.count)
+spamer = max(set(check_spam), key=check_spam.count)
 count_spam = check_spam.count(spamer)
 
 print(f'Спамер {spamer} спамил {count_spam} раз')

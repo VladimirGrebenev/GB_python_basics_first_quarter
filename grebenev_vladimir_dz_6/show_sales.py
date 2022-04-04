@@ -3,18 +3,17 @@
 from sys import argv
 
 with open('bakery.csv', 'r', encoding='utf-8') as f:
+    lines = f.readlines()
     if len(argv) == 2:
         start = int(argv[1]) - 1
-        lines = f.readlines()[start:]
-        for line in lines:
+        for line in lines[start:]:
             print(line.replace('\n', ''))
     elif len(argv) == 3:
         start = int(argv[1]) - 1
         stop = int(argv[2])
-        lines = f.readlines()[start:stop]
-        for line in lines:
+        for line in lines[start:stop]:
             print(line.replace('\n', ''))
     else:
-        for line in f:
+        for line in lines:
             print(line.replace('\n', ''))
 
