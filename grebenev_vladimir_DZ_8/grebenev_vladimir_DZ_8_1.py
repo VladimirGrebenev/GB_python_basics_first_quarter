@@ -17,7 +17,7 @@ import re
 my_notebook = []
 def email_parse(email_address_list):
     """принимает список email, проверяет их валидность и возвращает ({name:domain})"""
-    RE_EMAIL = re.compile(r'\b[\w_+-]+@[\w_+-]+\.[a-z]{2,3}\b')
+    RE_EMAIL = re.compile(r'\b[\w\._+-]+@[\w\._+-]+\.[a-z]{2,3}\b')
 
     for email in email_address_list:
         assert RE_EMAIL.match(email), f'wrong email: {email}'

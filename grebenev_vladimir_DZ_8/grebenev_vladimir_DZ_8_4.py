@@ -30,7 +30,6 @@ def val_checker(x=0):
         return wrapper
     return _val_checker
 
-
 @val_checker(lambda x: x > 0)
 def calc_cube(x):
    return x ** 3
