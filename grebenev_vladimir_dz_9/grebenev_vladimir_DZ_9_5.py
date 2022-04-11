@@ -1,4 +1,4 @@
-# Домашняя работа к уроку №6 задание 5
+# Домашняя работа к уроку №9 задание 5
 # Реализовать класс Stationery (канцелярская принадлежность).
 # определить в нём атрибут title (название) и метод draw (отрисовка).
 # Метод выводит сообщение «Запуск отрисовки»;
@@ -14,14 +14,14 @@ class Stationary:
         self.title = title
 
     def draw(self):
-        return print(f'Запуск отрисовки')
+        return f'Запуск отрисовки {self.title}'
 
 class Pen(Stationary):
     def __init__(self, title):
         super().__init__(title)
 
     def draw(self):
-        return print(f'Запуск писанины')
+        return f'Запуск писанины {self.title}'
 
 
 class Pencil(Stationary):
@@ -29,7 +29,7 @@ class Pencil(Stationary):
         super().__init__(title)
 
     def draw(self):
-        return print(f'Запуск черчения')
+        return f'Запуск черчения {self.title}'
 
 
 class Handle(Stationary):
@@ -37,13 +37,13 @@ class Handle(Stationary):
         super().__init__(title)
 
     def draw(self):
-        return print(f'Запуск подчёркивания')
+        return f'Запуск подчёркивания {self.title}'
 
 new_list_draw = Stationary('pen')
-new_list_draw.draw()
+print(new_list_draw.draw())
 new_pen = Pen('red pen')
-new_pen.draw()
+print(new_pen.draw())
 black_pencil = Pencil('black pencil')
-black_pencil.draw()
+print(black_pencil.draw())
 yellow_handle = Handle('yellow handle')
-yellow_handle.draw()
+print(yellow_handle.draw())

@@ -1,4 +1,4 @@
-# Домашняя работа к уроку №6 задание 4
+# Домашняя работа к уроку №9 задание 4
 # Реализуйте базовый класс Car.
 # у класса должны быть следующие атрибуты: speed, color, name, is_police (булево).
 # А также методы: go, stop, turn(direction), которые должны сообщать, что машина поехала, остановилась,\
@@ -18,16 +18,16 @@ class Car:
         self.is_police = bool(is_police)
 
     def go(self):
-        return print(f'машина {self.name} поехала')
+        return f'машина {self.name} поехала'
 
     def stop(self):
-        return print(f'машина {self.name} остановилась')
+        return f'машина {self.name} остановилась'
 
     def turn(self, direction):
-        return print(f'машина {self.name} повернула {direction}')
+        return f'машина {self.name} повернула {direction}'
 
     def show_speed(self):
-        return print(f'скороть машины {self.name} равна {self.speed}')
+        return f'скороть машины {self.name} равна {self.speed}'
 
 class TownCar(Car):
     def __init__(self, speed, color, name, is_police=False):
@@ -36,9 +36,9 @@ class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
             self.is_police = True
-            return print(f'машина {self.name} превысила скорость 60 км/ч')
+            return f'машина {self.name} превысила скорость 60 км/ч'
         else:
-            return print(f'скороть машины {self.name} равна {self.speed}')
+            return f'скороть машины {self.name} равна {self.speed}'
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police=False):
@@ -51,9 +51,9 @@ class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
             self.is_police = True
-            return print(f'машина {self.name} превысила скорость 40 км/ч')
+            return f'машина {self.name} превысила скорость 40 км/ч'
         else:
-            return print(f'скороть машины {self.name} равна {self.speed}')
+            return f'скороть машины {self.name} равна {self.speed}'
 
 class PoliceCar(Car):
     def __init__(self, speed, color, name, is_police=False):
@@ -63,17 +63,17 @@ toyota = TownCar(60, 'white', 'Toyota Rav 4')
 print(toyota.speed)
 print(toyota.is_police)
 toyota.speed = 65
-toyota.show_speed()
+print(toyota.show_speed())
 print(toyota.is_police)
 
 ferrari = SportCar(300, 'red', 'Ferrari F40')
 print(ferrari.__dict__)
-ferrari.show_speed()
+print(ferrari.show_speed())
 
 gazel = WorkCar(35, 'black', 'Gazel')
-gazel.show_speed()
-gazel.stop()
-gazel.go()
-gazel.turn('направо')
+print(gazel.show_speed())
+print(gazel.stop())
+print(gazel.go())
+print(gazel.turn('направо'))
 gazel.speed = 45
-gazel.show_speed()
+print(gazel.show_speed())

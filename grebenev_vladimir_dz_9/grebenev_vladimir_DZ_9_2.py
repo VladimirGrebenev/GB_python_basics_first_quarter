@@ -1,4 +1,4 @@
-# Домашняя работа к уроку №6 задание 2
+# Домашняя работа к уроку №9 задание 2
 # Реализовать класс Road (дорога).
 # определить атрибуты: length (длина), width (ширина);
 # значения атрибутов должны передаваться при создании экземпляра класса;
@@ -15,7 +15,7 @@ class Road:
         self._width = width
 
     def asphalt(self, thickness):
-        return print(f'масса необходимого асфальта: {self._length * self._width * 25 * thickness} кг')
+        return f'масса необходимого асфальта: {self._length * self._width * 25 * thickness} кг'
 
 new_road = Road(10, 5)
-new_road.asphalt(5)
+print(new_road.asphalt(5))

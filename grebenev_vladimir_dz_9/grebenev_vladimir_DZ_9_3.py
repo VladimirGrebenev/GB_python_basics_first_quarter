@@ -1,4 +1,4 @@
-# Домашняя работа к уроку №6 задание 3
+# Домашняя работа к уроку №9 задание 3
 # Реализовать базовый класс Worker (работник).
 # определить атрибуты: name, surname, position (должность), income (доход);
 # последний атрибут должен быть защищённым и ссылаться на словарь, содержащий элементы: оклад и премия, например,\
@@ -21,13 +21,13 @@ class Position(Worker):
         super().__init__(name, surname, position, income)
 
     def get_full_name(self):
-        return print(f'Имя: {self.name} Фамилия: {self.surname}')
+        return f'Имя: {self.name} Фамилия: {self.surname}'
 
     def get_total_income(self):
         salary = int(self._income["wage"]) + int(self._income["bonus"])
-        return print(f'Зарплата: {salary}')
+        return f'Зарплата: {salary}'
 
 income = {'wage': 100000, 'bonus': 200000}
 new_man = Position('Vova', 'Grebenev', 'director', income)
-new_man.get_full_name()
-new_man.get_total_income()
+print(new_man.get_full_name())
+print(new_man.get_total_income())
