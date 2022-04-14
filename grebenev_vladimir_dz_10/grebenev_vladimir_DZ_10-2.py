@@ -10,13 +10,13 @@
 
 from abc import ABC, abstractmethod
 
-class Clohes(ABC):
+class Clothes(ABC):
 
     @abstractmethod
     def fabric_consume(self):
         pass
 
-class Coat(Clohes):
+class Coat(Clothes):
     def __init__(self, size):
         super().__init__()
         self.size = size
@@ -25,7 +25,7 @@ class Coat(Clohes):
     def fabric_consume(self):
         return round(self.size/6.5 + 0.5, 2)
 
-class Suit(Clohes):
+class Suit(Clothes):
     def __init__(self, height):
         super().__init__()
         self.height = height
