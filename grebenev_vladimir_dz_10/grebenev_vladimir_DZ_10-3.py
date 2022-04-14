@@ -32,7 +32,7 @@ class Cell:
 
     def __add__(self, other):
         slots = self.number_of_slots + other.number_of_slots
-        return  Cell(slots)
+        return Cell(slots)
 
     def __sub__(self, other):
         slots = self.number_of_slots - other.number_of_slots
@@ -50,7 +50,6 @@ class Cell:
         return Cell(slots)
 
     def make_order(self, slots_in_row):
-        # return '\n'.join([''.join(['%d\t' % i for i in row]) for row in self.matrix])
         row_number = self.number_of_slots // slots_in_row
         last_row_slots = self.number_of_slots % slots_in_row
         matrix = [['*' for j in range(slots_in_row)] for i in range(row_number)]
