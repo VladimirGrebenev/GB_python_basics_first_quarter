@@ -14,22 +14,23 @@ class Storage:
     def __str__(self):
         return f'{self.equipment}'
 
-    def accept_to_storage(self, eq_item):
+    def accept_to_storage(self, eq_item, qty):
         '''приём/закупка оборудования в подразделение/на склад'''
         if eq_item in self.equipment:
-            self.equipment[eq_item] += 1
+            self.equipment[eq_item] += qty
         else:
-            self.equipment[eq_item] = 1
-        print(f'->>>{self.storage_name} принял {eq_item.model}')
+            self.equipment[eq_item] = qty
+        print(f'->>>{self.storage_name} принял {eq_item.model} в количестве {qty}')
 
-    def move_to_department(self, where_to, eq_item):
+    def move_to_department(self, where_to, eq_item, qty):
         '''перемещение обрудования между подразделениями'''
-        if eq_item in self.equipment and self.equipment[eq_item] != 0:
-            self.equipment[eq_item] -= 1
-            where_to.accept_to_storage(eq_item)
+        if eq_item in self.equipment and (self.equipment[eq_item] - qty) >= 0:
+            self.equipment[eq_item] -= qty
+            where_to.accept_to_storage(eq_item, qty)
             print(f'перемещением с {self.storage_name}')
         else:
-            print(f'->>>техника {eq_item.model} отсутствует на {self.storage_name}')
+            print(f'->>> Техника {eq_item.model} отсутствует на {self.storage_name} в нужном '
+                  f'количестве {qty}. Перемещение не удалось.')
 
     def report_storage(self):
         print(f'!>>> Отчёт материальных ценностей на {self.storage_name}')
@@ -61,11 +62,11 @@ s = Scanner('ScanJet 10')
 x = Xerox('Xerox 4580', 'не МФУ')
 big_storage = Storage('Big Storage')
 workshop = Storage('Workshop №321')
-big_storage.accept_to_storage(p)
-workshop.accept_to_storage(p)
-big_storage.move_to_department(workshop, p)
+big_storage.accept_to_storage(p, 20)
+workshop.accept_to_storage(p, 20)
+big_storage.move_to_department(workshop, p, 10)
 big_storage.report_storage()
-big_storage.move_to_department(workshop, p)
+big_storage.move_to_department(workshop, p, 20)
 workshop.report_storage()
 
 
