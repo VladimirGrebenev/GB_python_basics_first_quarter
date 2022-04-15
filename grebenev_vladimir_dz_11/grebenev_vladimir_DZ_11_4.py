@@ -24,8 +24,13 @@ class Storage:
 
     @staticmethod
     def valid_quantity(qty):
-        qty = int(qty)
-        return qty
+        try:
+            qty = int(qty)
+        except Exception:
+            print('Ошибка! Нужно ввести цифрами количество перемещаемых ценностей')
+            qty = 0
+        finally:
+            return qty
 
     def accept_to_storage(self, eq_item, qty):
         '''приём/закупка оборудования в подразделение/на склад'''
